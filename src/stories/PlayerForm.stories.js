@@ -4,7 +4,7 @@ import PlayerForm from './PlayerForm'
 export default {
   title: 'PlayerForm',
   component: PlayerForm,
-  argTypes: {},
+  argTypes: { onSubmit: { action: 'onSubmit' } },
 }
 
 //👇 We create a “template” of how args map to rendering
