@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import './PlayerForm.css'
 
 PlayerForm.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default function PlayerForm({ onSubmit }) {
