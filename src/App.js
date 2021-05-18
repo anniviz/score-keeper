@@ -12,14 +12,39 @@ function App() {
 
   return (
     <div className="App">
-      {playerArray.map(player => (
-        <Player key={player.name} name={player.name} score={player.score} />
+      {playerArray.map((player, index) => (
+        <Player
+          key={player.name}
+          name={player.name}
+          score={player.score}
+          onMinusClick={() => handleMinusClick(index)}
+          onPlusClick={() => handlePlusClick(index)}
+        />
       ))}
+
       <Button onClick={handleResetScoreClick}>Reset Scores</Button>
       <Button onClick={handleResetAllClick}>Reset All</Button>
       <PlayerForm></PlayerForm>
     </div>
   )
+
+  function handleMinusClick(index) {
+    const playerToUpdate = playerArray[index]
+    setPlayerArray([
+      ...playerArray.splice(0, index),
+      { ...playerToUpdate, score: playerToUpdate.score - 1 },
+      ...playerArray.splice(index + 1),
+    ])
+  }
+
+  function handlePlusClick(index) {
+    const playerToUpdate = playerArray[index]
+    setPlayerArray([
+      ...playerArray.splice(0, index),
+      { ...playerToUpdate, score: playerToUpdate.score + 1 },
+      ...playerArray.splice(index + 1),
+    ])
+  }
 
   function handleResetAllClick() {
     setPlayerArray([])
