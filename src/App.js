@@ -15,7 +15,7 @@ function App() {
       {playerArray.map(player => (
         <Player key={player.name} name={player.name} score={player.score} />
       ))}
-      <Button>Reset Scores</Button>
+      <Button onClick={handleResetScoreClick}>Reset Scores</Button>
       <Button onClick={handleResetAllClick}>Reset All</Button>
       <PlayerForm></PlayerForm>
     </div>
@@ -23,6 +23,10 @@ function App() {
 
   function handleResetAllClick() {
     setPlayerArray([])
+  }
+
+  function handleResetScoreClick() {
+    setPlayerArray(playerArray.map(player => ({ ...player, score: 0 })))
   }
 }
 
