@@ -12,15 +12,17 @@ function App() {
 
   return (
     <div className="App">
-      {playerArray.map((player, index) => (
-        <Player
-          key={player.name}
-          name={player.name}
-          score={player.score}
-          onMinusClick={() => handleMinusClick(index)}
-          onPlusClick={() => handlePlusClick(index)}
-        />
-      ))}
+      <div className="App__Player-container">
+        {playerArray.map((player, index) => (
+          <Player
+            key={player.name}
+            name={player.name}
+            score={player.score}
+            onMinusClick={() => handleMinusClick(index)}
+            onPlusClick={() => handlePlusClick(index)}
+          />
+        ))}
+      </div>
 
       <Button onClick={handleResetScoreClick}>Reset Scores</Button>
       <Button onClick={handleResetAllClick}>Reset All</Button>
