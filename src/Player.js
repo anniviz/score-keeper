@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import './Player.css'
 import Button from './Button'
 
-Button.propTypes = {
+Player.propTypes = {
   name: PropTypes.string,
   score: PropTypes.number,
   onMinusClick: PropTypes.func.isRequired,
