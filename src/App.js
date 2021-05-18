@@ -24,7 +24,7 @@ function App() {
 
       <Button onClick={handleResetScoreClick}>Reset Scores</Button>
       <Button onClick={handleResetAllClick}>Reset All</Button>
-      <PlayerForm></PlayerForm>
+      <PlayerForm onSubmit={handleNewPlayer}></PlayerForm>
     </div>
   )
 
@@ -52,6 +52,10 @@ function App() {
 
   function handleResetScoreClick() {
     setPlayerArray(playerArray.map(player => ({ ...player, score: 0 })))
+  }
+
+  function handleNewPlayer(name) {
+    setPlayerArray([...playerArray, { name, score: 0 }])
   }
 }
 
