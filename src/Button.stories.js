@@ -10,12 +10,12 @@ const Template = args => <Button {...args} />
 
 export const DefaultButton = Template.bind({})
 DefaultButton.args = {
-  children: 'click me',
+  children: 'Hello',
   isActive: false,
 }
 
 export const ActiveButton = Template.bind({})
 ActiveButton.args = {
-  children: 'i was clicked',
+  children: 'I am active',
   isActive: true,
 }
