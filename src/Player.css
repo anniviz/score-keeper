@@ -1,0 +1,11 @@
+.Player {
+  display: grid;
+  grid-template-columns: 200px auto auto auto;
+  align-items: center;
+  width: 300px;
+  background: wheat;
+}
+
+.Player__score {
+  padding: 12px;
+}
