@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import Button from './Button'
-import Player from './Player'
-import PlayerForm from './PlayerForm'
+import Button from './components/Button'
+import Player from './components/Player'
+import PlayerForm from './components/PlayerForm'
 
 function App() {
   const [playerArray, setPlayerArray] = useState([

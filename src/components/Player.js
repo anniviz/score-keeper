@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import './Player.css'
 import Button from './Button'
+import styled from 'styled-components/macro'
 
 Player.propTypes = {
   name: PropTypes.string,
@@ -11,11 +11,23 @@ Player.propTypes = {
 
 export default function Player({ name, score, onMinusClick, onPlusClick }) {
   return (
-    <div className="Player">
+    <PlayerWrapper>
       <span>{name}</span>
       <Button onClick={onMinusClick}>-</Button>
-      <span className="Player__score">{score}</span>
+      <Score className="Player__score">{score}</Score>
       <Button onClick={onPlusClick}>+</Button>
-    </div>
+    </PlayerWrapper>
   )
 }
+
+const PlayerWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 200px auto auto auto;
+  align-items: center;
+  width: 300px;
+  background: wheat;
+`
+
+const Score = styled.span`
+  padding: 12px;
+`
